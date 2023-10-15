@@ -8,12 +8,18 @@ module Teams
       def call(teams_list)
         team_names_array = Teams::ListGeneratorService.call(teams_list).shuffle
 
-        team_names_array.first(TEAMS_IN_DIVISION).each do |name|
-          Team.create(name: name, division: 'A', round_winner: true)
-        end
+        generate_teams(team_names_array.first(TEAMS_IN_DIVISION), division: 'A')
+        generate_teams(team_names_array.last(TEAMS_IN_DIVISION), division: 'B')
+      end
 
-        team_names_array.last(TEAMS_IN_DIVISION).each do |name|
-          Team.create(name: name, division: 'B', round_winner: true)
+      private
+
+      def generate_teams(team_names_array, division:)
+        row_count = 1
+        team_names_array.each do |name|
+          team = Team.create(name: name)
+          TournamentRound.create(team: team, round: 1, row: row_count, division: division)
+          row_count += 1
         end
       end
     end
