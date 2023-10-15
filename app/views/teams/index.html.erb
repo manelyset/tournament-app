@@ -1,0 +1,9 @@
+<%= form_tag(teams_path, method: :post) do %>
+    <label>Teams:</label>
+    <div>Enter a list of 16 participant teams. If there is less than 16 teams, standard names will be added</div>
+    </br>
+    <%= text_area_tag :teams_list %>
+    </br>
+
+  <%= submit_tag 'Start a tournament' %>
+<% end %>

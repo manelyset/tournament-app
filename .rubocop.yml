@@ -14,6 +14,7 @@ AllCops:
     - Gemfile
     - Rakefile
     - db/migrate/*
+    - config.ru
 
 Style/Documentation:
   Enabled: false
