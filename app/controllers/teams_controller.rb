@@ -4,7 +4,7 @@ class TeamsController < ApplicationController
   def index; end
 
   def create
-    TeamsCreatorService.call(params[:teams_list])
+    Teams::CreatorService.call(params[:teams_list])
 
     redirect_to tours_path
   end

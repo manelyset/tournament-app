@@ -6,7 +6,7 @@ module Teams
 
     class << self
       def call(teams_list)
-        team_names_array = teams_list.split('\n').first(NUMBER_OF_TEAMS)
+        team_names_array = teams_list.split('\r\n').first(NUMBER_OF_TEAMS)
         fill_missing(team_names_array) if team_names_array.length < NUMBER_OF_TEAMS
         team_names_array
       end

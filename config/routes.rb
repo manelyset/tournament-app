@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'teams#index'
 
-  resource :teams, only: %i[index create]
-  resource :tours, only: %i[index]
+  resources :teams, only: %i[index create]
+  resources :tours, only: %i[index]
 end
