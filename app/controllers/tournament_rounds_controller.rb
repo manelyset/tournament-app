@@ -7,9 +7,9 @@ class TournamentRoundsController < ApplicationController
 
   def create
     if %w[A B].include?(params[:division])
-      DivisionResultsGeneratorService.call(division: params[:division])
+      TournamentRounds::DivisionResultsGeneratorService.call(division: params[:division])
     elsif params[:division] == 'playoff'
-      PlayoffResultsGeneratorService.call
+      TournamentRounds::PlayoffResultsGeneratorService.call
     end
 
     redirect_to tournament_rounds_path
