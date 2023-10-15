@@ -1,0 +1,29 @@
+require:
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 2.7
+  TargetRailsVersion: 7.1.1
+  Exclude:
+    - bin/**/*
+    - db/schema.rb
+    - tmp/*
+    - config/**/*
+    - Gemfile
+    - Rakefile
+    - db/migrate/*
+
+Style/Documentation:
+  Enabled: false
+
+Style/WordArray:
+  EnforcedStyle: percent
+
+Style/SymbolArray:
+  EnforcedStyle: percent
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+
