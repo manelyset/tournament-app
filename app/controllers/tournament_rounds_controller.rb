@@ -2,13 +2,16 @@
 
 class TournamentRoundsController < ApplicationController
   def index
-    @division_a_teams = TournamentRound.division_a
-    @division_b_teams = TournamentRound.division_b
-    @playoff_teams = TournamentRound.playoff_teams
-    @winner = TournamentRound.find_by(round: 4, round_winner: true)
+    @presenter = TournamentRounds::IndexPresenter.new
   end
 
   def create
+    if %w[A B].include?(params[:division])
+      DivisionResultsGeneratorService.call(division: params[:division])
+    elsif params[:division] == 'playoff'
+      PlayoffResultsGeneratorService.call
+    end
+
     redirect_to tournament_rounds_path
   end
 end
