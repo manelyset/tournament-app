@@ -1,0 +1,93 @@
+<section>
+    <div class='tournament'>
+      <ul class='round round-1'>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-left game-top'><%= @division_a_teams.find_by(round: 1, row: 1).team.name %></li>
+        <li class='game-left spacer'>&nbsp;</li>
+        <li class='game-left game-bottom'><%= @division_a_teams.find_by(round: 1, row: 2).team.name %></li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-left game-top'><%= @division_a_teams.find_by(round: 1, row: 3).team.name %></li>
+        <li class='game-left spacer'>&nbsp;</li>
+        <li class='game-left game-bottom'><%= @division_a_teams.find_by(round: 1, row: 4).team.name %></li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-left game-top'><%= @division_a_teams.find_by(round: 1, row: 5).team.name %></li>
+        <li class='game-left spacer'>&nbsp;</li>
+        <li class='game-left game-bottom'><%= @division_a_teams.find_by(round: 1, row: 6).team.name %></li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-left game-top'><%= @division_a_teams.find_by(round: 1, row: 7).team.name %></li>
+        <li class='game-left spacer'>&nbsp;</li>
+        <li class='game-left game-bottom'><%= @division_a_teams.find_by(round: 1, row: 8).team.name %></li>
+        <li class='spacer'>&nbsp;</li>
+      </ul>
+      <ul class='round round-2'>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-left game-top'><%= @division_a_teams.find_by(round: 2, row: 1).team.name %></li>
+        <li class='game-left spacer region region-right'></li>
+        <li class='game-left game-bottom'><%= @division_a_teams.find_by(round: 2, row: 2).team.name %></li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-left game-top'><%= @division_a_teams.find_by(round: 2, row: 3).team.name %></li>
+        <li class='game-left spacer region region-right'></li>
+        <li class='game-left game-bottom'><%= @division_a_teams.find_by(round: 2, row: 4).team.name %></li>
+        <li class='spacer'>&nbsp;</li>
+      </ul>
+      <ul class='round round-3'>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-left game-top'><%= @division_a_teams.find_by(round: 3, row: 1).team.name %></li>
+        <li class='game-left spacer'>&nbsp;</li>
+        <li class='game-left game-bottom'><%= @division_a_teams.find_by(round: 3, row: 2).team.name %></li>
+        <li class='spacer'>&nbsp;</li>
+      </ul>
+      <ul class='round semi-final'>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-left game-top'></li>
+        <li class='spacer'>&nbsp;</li>
+      </ul>
+      <ul class='round finals'>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game final'><%= @winner.team.name %></li>
+        <li class='spacer'>&nbsp;</li>
+      </ul>
+      <ul class='round semi-final'>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-right game-top'></li>
+        <li class='spacer'>&nbsp;</li>
+      </ul>
+      <ul class='round round-3'>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-right game-top'><%= @division_b_teams.find_by(round: 3, row: 1).team.name %></li>
+        <li class='game-right spacer'>&nbsp;</li>
+        <li class='game-right game-bottom'><%= @division_b_teams.find_by(round: 3, row: 2).team.name %></li>
+        <li class='spacer'>&nbsp;</li>
+      </ul>
+      <ul class='round round-2'>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-right game-top'><%= @division_b_teams.find_by(round: 2, row: 1).team.name %></li>
+        <li class='game-right spacer region region-left'></li>
+        <li class='game-right game-bottom'><%= @division_b_teams.find_by(round: 2, row: 2).team.name %></li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-right game-top'><%= @division_b_teams.find_by(round: 2, row: 3).team.name %></li>
+        <li class='game-right spacer region region-left'></li>
+        <li class='game-right game-bottom'><%= @division_b_teams.find_by(round: 2, row: 4).team.name %></li>
+        <li class='spacer'>&nbsp;</li>
+      </ul>
+      <ul class='round round-1'>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-right game-top'><%= @division_b_teams.find_by(round: 1, row: 1).team.name %></li>
+        <li class='game-right spacer'>&nbsp;</li>
+        <li class='game-right game-bottom'><%= @division_b_teams.find_by(round: 1, row: 2).team.name %></li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-right game-top'><%= @division_b_teams.find_by(round: 1, row: 3).team.name %></li>
+        <li class='game-right spacer'>&nbsp;</li>
+        <li class='game-right game-bottom'><%= @division_b_teams.find_by(round: 1, row: 4).team.name %></li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-right game-top'><%= @division_b_teams.find_by(round: 1, row: 5).team.name %></li>
+        <li class='game-right spacer'>&nbsp;</li>
+        <li class='game-right game-bottom'><%= @division_b_teams.find_by(round: 1, row: 6).team.name %></li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-right game-top'><%= @division_b_teams.find_by(round: 1, row: 7).team.name %></li>
+        <li class='game-right spacer'>&nbsp;</li>
+        <li class='game-right game-bottom'><%= @division_b_teams.find_by(round: 1, row: 8).team.name %></li>
+        <li class='spacer'>&nbsp;</li>
+      </ul>
+    </div>
+  </section>
