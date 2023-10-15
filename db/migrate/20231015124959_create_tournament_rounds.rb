@@ -6,6 +6,7 @@ class CreateTournamentRounds < ActiveRecord::Migration[7.1]
       t.integer :row
       t.boolean :round_winner
       t.column :division, :division_enum, null: false
+      t.integer :round_score
 
       t.timestamps
     end
