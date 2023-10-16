@@ -2,11 +2,11 @@
 
 module TournamentRounds
   class DivisionResultsGeneratorService
-    NUMBER_OF_ROUNDS = 3
-
     class << self
       def call(division:)
-        (NUMBER_OF_ROUNDS - 1).times do |round|
+        return if TournamentRound.where(division: division).playoff_teams.count == 2
+
+        (TournamentRound::PLAYOFF_ROUND - 1).times do |round|
           round_results(round, division)
         end
       end
