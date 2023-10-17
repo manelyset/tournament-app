@@ -6,7 +6,7 @@ class TournamentRound < ApplicationRecord
 
   belongs_to :team
 
-  validates :round, presence: true, numericality: { greater_than_or_equal_to: 1, less_than_or_equal_to: 4 }
+  validates :round, presence: true, numericality: { greater_than_or_equal_to: 1, less_than_or_equal_to: 5 }
   validates :row, presence: true, numericality: { greater_than_or_equal_to: 1, less_than_or_equal_to: 8 }
   validates :round_score, numericality: { greater_than_or_equal_to: 1, less_than_or_equal_to: 100 }, allow_nil: true
 

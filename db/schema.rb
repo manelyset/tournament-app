@@ -31,7 +31,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_15_124959) do
     t.integer "round"
     t.integer "row"
     t.boolean "round_winner"
-    t.enum "division", null: false, enum_type: "division_enum"
+    t.enum "division", enum_type: "division_enum"
     t.integer "round_score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

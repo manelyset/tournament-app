@@ -91,4 +91,11 @@
       </ul>
     </div>
   </section>
-  <% @presenter.draw_buttons %>
+  <% if @presenter.winner.present? %>
+    <%= button_to 'New tournament', root_path %>
+  <% elsif @presenter.playoff_teams.count == 4 %>
+    <%= button_to 'Playoff results', { controller: 'tournament_rounds', action: 'create', division: 'playoff' } %>
+  <% else %>
+    <%= button_to 'Division A results', { controller: 'tournament_rounds', action: 'create', division: 'A' } %>
+    <%= button_to 'Division B results', { controller: 'tournament_rounds', action: 'create', division: 'B' } %>
+  <% end %>

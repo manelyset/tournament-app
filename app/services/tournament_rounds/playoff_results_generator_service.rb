@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module TournamentRounds
-  class DivisionResultsGeneratorService
+  class PlayoffResultsGeneratorService
     class << self
       def call
         playoff_teams = TournamentRound.playoff_teams
@@ -11,7 +11,7 @@ module TournamentRounds
           TournamentRound.find_by(team: item.team, round: TournamentRound::PLAYOFF_ROUND - 1).round_score
         end
 
-        team1, team2 = playoff_teams.where.not(id: [worst_team, best_team].ids)
+        team1, team2 = playoff_teams.where.not(id: [worst_team, best_team].pluck(:id))
 
         winner1 = choose_winner(worst_team, best_team)
         winner2 = choose_winner(team1, team2)
@@ -27,7 +27,7 @@ module TournamentRounds
 
         winning_team = [team1, team2].max_by(&:round_score)
 
-        TournamentRound.create(round: winning_team.round + 1, team: winning_team.team)
+        TournamentRound.create(round: winning_team.round + 1, row: 1, team: winning_team.team)
       end
     end
   end
