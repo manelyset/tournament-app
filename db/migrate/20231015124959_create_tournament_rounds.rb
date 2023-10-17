@@ -4,7 +4,6 @@ class CreateTournamentRounds < ActiveRecord::Migration[7.1]
       t.references :team, null: false, foreign_key: true
       t.integer :round
       t.integer :row
-      t.boolean :round_winner
       t.column :division, :division_enum
       t.integer :round_score
 
