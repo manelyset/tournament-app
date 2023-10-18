@@ -1,0 +1,105 @@
+<section>
+    <div class='tournament'>
+      <ul class='round round-1'>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-left game-top'><%= @presenter.round_result(division: 'A', round: 1, row: 1) %></li>
+        <li class='game-left spacer'>&nbsp;</li>
+        <li class='game-left game-bottom'><%= @presenter.round_result(division: 'A', round: 1, row: 2) %></li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-left game-top'><%= @presenter.round_result(division: 'A', round: 1, row: 3) %></li>
+        <li class='game-left spacer'>&nbsp;</li>
+        <li class='game-left game-bottom'><%= @presenter.round_result(division: 'A', round: 1, row: 4) %></li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-left game-top'><%= @presenter.round_result(division: 'A', round: 1, row: 5) %></li>
+        <li class='game-left spacer'>&nbsp;</li>
+        <li class='game-left game-bottom'><%= @presenter.round_result(division: 'A', round: 1, row: 6) %></li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-left game-top'><%= @presenter.round_result(division: 'A', round: 1, row: 7) %></li>
+        <li class='game-left spacer'>&nbsp;</li>
+        <li class='game-left game-bottom'><%= @presenter.round_result(division: 'A', round: 1, row: 8) %></li>
+        <li class='spacer'>&nbsp;</li>
+      </ul>
+      <ul class='round round-2'>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-left game-top'><%= @presenter.round_result(division: 'A', round: 2, row: 1) %></li>
+        <li class='game-left spacer region region-right'></li>
+        <li class='game-left game-bottom'><%= @presenter.round_result(division: 'A', round: 2, row: 2) %></li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-left game-top'><%= @presenter.round_result(division: 'A', round: 2, row: 3) %></li>
+        <li class='game-left spacer region region-right'></li>
+        <li class='game-left game-bottom'><%= @presenter.round_result(division: 'A', round: 2, row: 4) %></li>
+        <li class='spacer'>&nbsp;</li>
+      </ul>
+      <ul class='round round-3'>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-left game-top'><%= @presenter.round_result(division: 'A', round: 3, row: 1) %></li>
+        <li class='game-left spacer'>&nbsp;</li>
+        <li class='game-left game-bottom'><%= @presenter.round_result(division: 'A', round: 3, row: 2) %></li>
+        <li class='spacer'>&nbsp;</li>
+      </ul>
+      <ul class='round semi-final'>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-left game-top'></li>
+        <li class='spacer'>&nbsp;</li>
+      </ul>
+      <ul class='round finals'>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game final'>
+          <%= "#{@presenter.round_result(round: 4, row: 1)} vs #{@presenter.round_result(round: 4, row: 2)}" %>
+          </br>
+          <%= @presenter.winner&.team&.name %>
+        </li>
+        <li class='spacer'>&nbsp;</li>
+      </ul>
+      <ul class='round semi-final'>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-right game-top'></li>
+        <li class='spacer'>&nbsp;</li>
+      </ul>
+      <ul class='round round-3'>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-right game-top'><%= @presenter.round_result(division: 'B', round: 3, row: 1) %></li>
+        <li class='game-right spacer'>&nbsp;</li>
+        <li class='game-right game-bottom'><%= @presenter.round_result(division: 'B', round: 3, row: 2) %></li>
+        <li class='spacer'>&nbsp;</li>
+      </ul>
+      <ul class='round round-2'>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-right game-top'><%= @presenter.round_result(division: 'B', round: 2, row: 1) %></li>
+        <li class='game-right spacer region region-left'></li>
+        <li class='game-right game-bottom'><%= @presenter.round_result(division: 'B', round: 2, row: 2) %></li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-right game-top'><%= @presenter.round_result(division: 'B', round: 2, row: 3) %></li>
+        <li class='game-right spacer region region-left'></li>
+        <li class='game-right game-bottom'><%= @presenter.round_result(division: 'B', round: 2, row: 4) %></li>
+        <li class='spacer'>&nbsp;</li>
+      </ul>
+      <ul class='round round-1'>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-right game-top'><%= @presenter.round_result(division: 'B', round: 1, row: 1) %></li>
+        <li class='game-right spacer'>&nbsp;</li>
+        <li class='game-right game-bottom'><%= @presenter.round_result(division: 'B', round: 1, row: 2) %></li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-right game-top'><%= @presenter.round_result(division: 'B', round: 1, row: 3)%></li>
+        <li class='game-right spacer'>&nbsp;</li>
+        <li class='game-right game-bottom'><%= @presenter.round_result(division: 'B', round: 1, row: 4) %></li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-right game-top'><%= @presenter.round_result(division: 'B', round: 1, row: 5) %></li>
+        <li class='game-right spacer'>&nbsp;</li>
+        <li class='game-right game-bottom'><%= @presenter.round_result(division: 'B', round: 1, row: 6) %></li>
+        <li class='spacer'>&nbsp;</li>
+        <li class='game-right game-top'><%= @presenter.round_result(division: 'B', round: 1, row: 7) %></li>
+        <li class='game-right spacer'>&nbsp;</li>
+        <li class='game-right game-bottom'><%= @presenter.round_result(division: 'B', round: 1, row: 8) %></li>
+        <li class='spacer'>&nbsp;</li>
+      </ul>
+    </div>
+  </section>
+  <% if @presenter.winner.present? %>
+    <%= button_to 'New tournament', root_path, method: :get %>
+  <% elsif @presenter.playoff_teams.count == 4 %>
+    <%= button_to 'Playoff results', { controller: 'tournament_rounds', action: 'create', division: 'playoff' } %>
+  <% else %>
+    <%= button_to 'Division A results', { controller: 'tournament_rounds', action: 'create', division: 'A' } %>
+    <%= button_to 'Division B results', { controller: 'tournament_rounds', action: 'create', division: 'B' } %>
+  <% end %>

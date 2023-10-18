@@ -14,9 +14,8 @@ RSpec.describe Teams::CreatorService do
 
     it 'creates a list and splits it to divisions', :aggregate_failures do
       expect(Team.count).to eq(16)
-      expect(Team.division_a.count).to eq(8)
-      expect(Team.division_b.count).to eq(8)
-      expect(Team.pluck(:round_winner).all?).to be true
+      expect(TournamentRound.division_a.count).to eq(8)
+      expect(TournamentRound.division_b.count).to eq(8)
     end
   end
 end
