@@ -44,7 +44,11 @@
       </ul>
       <ul class='round finals'>
         <li class='spacer'>&nbsp;</li>
-        <li class='game final'><%= @presenter.winner&.team&.name %></li>
+        <li class='game final'>
+          <%= "#{@presenter.round_result(round: 4, row: 1)} vs #{@presenter.round_result(round: 4, row: 2)}" %>
+          </br>
+          <%= @presenter.winner&.team&.name %>
+        </li>
         <li class='spacer'>&nbsp;</li>
       </ul>
       <ul class='round semi-final'>

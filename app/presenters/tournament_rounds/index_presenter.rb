@@ -9,8 +9,8 @@ module TournamentRounds
 
     attr_reader :winner, :playoff_teams
 
-    def round_result(division:, round:, row:)
-      tournament_round_item = TournamentRound.find_by(division: division, round: round, row: row)
+    def round_result(options)
+      tournament_round_item = TournamentRound.find_by(**options)
 
       result_string = tournament_round_item&.team&.name
       result_string += " (#{tournament_round_item&.round_score})" if tournament_round_item&.round_score.present?

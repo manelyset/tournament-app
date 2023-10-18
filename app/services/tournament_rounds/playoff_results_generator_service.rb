@@ -13,21 +13,21 @@ module TournamentRounds
 
         team1, team2 = playoff_teams.where.not(id: [worst_team, best_team].pluck(:id))
 
-        winner1 = choose_winner(worst_team, best_team)
-        winner2 = choose_winner(team1, team2)
+        winner1 = choose_winner(worst_team, best_team, 1)
+        winner2 = choose_winner(team1, team2, 2)
 
         choose_winner(winner1, winner2)
       end
 
       private
 
-      def choose_winner(team1, team2)
+      def choose_winner(team1, team2, row = 1)
         team1.update(round_score: Random.new.rand(100))
         team2.update(round_score: Random.new.rand(100))
 
         winning_team = [team1, team2].max_by(&:round_score)
 
-        TournamentRound.create(round: winning_team.round + 1, row: 1, team: winning_team.team)
+        TournamentRound.create(round: winning_team.round + 1, row: row, team: winning_team.team)
       end
     end
   end
