@@ -96,7 +96,7 @@
     </div>
   </section>
   <% if @presenter.winner.present? %>
-    <%= button_to 'New tournament', root_path %>
+    <%= button_to 'New tournament', root_path, method: :get %>
   <% elsif @presenter.playoff_teams.count == 4 %>
     <%= button_to 'Playoff results', { controller: 'tournament_rounds', action: 'create', division: 'playoff' } %>
   <% else %>
