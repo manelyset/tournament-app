@@ -4,7 +4,8 @@ module TournamentRounds
   class DivisionResultsGeneratorService
     class << self
       def call(division:)
-        return if TournamentRound.where(division: division).playoff_teams.count == 2
+        return if TournamentRound.where(division: division).playoff_teams.count == 2 ||
+                  TournamentRound.where(division: division, round: 1).count < 8
 
         (TournamentRound::PLAYOFF_ROUND - 1).times do |round|
           round_results(round + 1, division)

@@ -28,3 +28,5 @@ Style/SymbolArray:
 Style/StringLiterals:
   EnforcedStyle: single_quotes
 
+RSpec/ExampleLength:
+  Enabled: false
